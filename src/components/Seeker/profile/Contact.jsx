@@ -73,30 +73,35 @@ const Contact = () => {
                 {contact.permanentAddress || "Not Available"}
               </td>
             </tr>
-            <tr>
-              {contact.facebookProfile ? (
-                <th className="contact-th">
-                  <Link to={contact.facebbokProfile}>Facebook</Link>
-                </th>
-              ) : (
-                ""
-              )}
 
-              {contact.linkedInProfile ? (
-                <th className="contact-th">
-                  <Link to={contact.linkedInProfile}>LinkedIn</Link>
-                </th>
-              ) : (
-                ""
-              )}
-              {contact.githubProfile ? (
-                <th className="contact-th">
-                  <Link to={contact.githubProfile}>Github</Link>
-                </th>
-              ) : (
-                ""
-              )}
-            </tr>
+            {contact.facebookProfile ? (
+              <span className="ml-2">
+                <Link to={contact.facebbokProfile}>
+                  <i className="fab fa-facebook-square fa-2x"></i>
+                </Link>
+              </span>
+            ) : (
+              ""
+            )}
+
+            {contact.linkedInProfile ? (
+              <span className="ml-2">
+                <Link to={contact.linkedInProfile}>
+                  <i className="fab fa-linkedin fa-2x"></i>
+                </Link>
+              </span>
+            ) : (
+              ""
+            )}
+            {contact.githubProfile ? (
+              <span className="ml-2">
+                <Link to={contact.githubProfile}>
+                  <i className="fab fa-github fa-2x"></i>
+                </Link>
+              </span>
+            ) : (
+              ""
+            )}
           </table>
         </div>
         <div style={{ display: `${showContactForm}` }}>
@@ -166,7 +171,7 @@ const Contact = () => {
               <input
                 className="form-control"
                 type="text"
-                name="facebbokProfile"
+                name="facebookProfile"
                 placeholder="Facebook Profile"
                 value={contact.facebookProfile}
                 onChange={(e) => handleFormDataChange(e)}
@@ -197,12 +202,15 @@ const Contact = () => {
                 className="btn btn-sm btn-outline-primary"
                 onClick={handleFormSubmit}
               >
-                Save
+                <i class="fas fa-check fa-2x"></i>
               </button>
             </div>
           </div>
         </div>
-        <div style={{ display: `${editBtn}` }} className="container mt-2 mb-2">
+        <div
+          style={{ display: `${editBtn}` }}
+          className="container text-center mt-2 mb-2"
+        >
           <button
             className="btn btn-sm btn-outline-primary"
             onClick={(e) => {
@@ -211,7 +219,7 @@ const Contact = () => {
               setEditBtn("none");
             }}
           >
-            Edit
+            <i className="fas fa-pencil-alt"></i>
           </button>
         </div>
       </div>

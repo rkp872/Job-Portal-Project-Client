@@ -4,10 +4,14 @@ const Summary = () => {
   return (
     <>
       <div>
-        <h3 className="summary-heading">
-          Software Engineer At Persistent Systems
+        <h3 className="summary-heading justify-content-space-between">
+          <i className="fas fa-briefcase fa-sm"></i>
+          <span className="m-3">Software Engineer At Persistent Systems</span>
         </h3>
-        <p className="summary-para">Pune, Maharashtra</p>
+        <p className="summary-para">
+          <i className="fas fa-map-marker-alt"></i>
+          <span className="m-2">Pune, Maharashtra</span>
+        </p>
       </div>
       <div>
         <p className="summary-para" style={{ fontStyle: "italic" }}>

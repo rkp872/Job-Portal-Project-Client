@@ -1,21 +1,21 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 class SeekerService {
-  token = Cookies.get("token");
-
   getContact() {
-    console.log("token  : ", this.token);
+    var token = Cookies.get("token");
+    console.log("token  : ", token);
     return axios.get("/seeker/get-contact", {
       headers: {
-        Authorization: `Bearer ${this.token}`,
+        Authorization: `Bearer ${token}`,
       },
     });
   }
 
   updateContact(contact) {
+    var token = Cookies.get("token");
     return axios.post("/seeker/update-contact", contact, {
       headers: {
-        Authorization: `Bearer ${this.token}`,
+        Authorization: `Bearer ${token}`,
       },
     });
   }
