@@ -19,5 +19,55 @@ class SeekerService {
       },
     });
   }
+  fetchProfessionalData() {
+    var token = Cookies.get("token");
+    return axios.get("/seeker/get-professional", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+  saveProfessionalData(professional) {
+    var token = Cookies.get("token");
+    return axios.post("/seeker/add-professional", professional, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+  deleteProfessionalData(id) {
+    var token = Cookies.get("token");
+    return axios.get(`/seeker/delete-professional/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+
+  fetchEducationData() {
+    var token = Cookies.get("token");
+    return axios.get(`/seeker/get-education`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+
+  addEducationData(education) {
+    var token = Cookies.get("token");
+    return axios.post("/seeker/add-education", education, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+  deleteEducationData(id) {
+    var token = Cookies.get("token");
+    return axios.get(`/seeker/delete-education/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
 }
 export default new SeekerService();

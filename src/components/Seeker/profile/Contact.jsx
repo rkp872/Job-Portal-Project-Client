@@ -104,100 +104,168 @@ const Contact = () => {
             )}
           </table>
         </div>
-        <div style={{ display: `${showContactForm}` }}>
-          <div className="mt-2 text-center" style={{ width: "400px" }}>
-            <div className="container mt-1">
-              <input
-                className="form-control"
-                type="text"
-                name="email"
-                placeholder="Email"
-                disabled
-                value={contact.email}
-                onChange={(e) => handleFormDataChange(e)}
-              />
+        <div style={{ display: `${showContactForm}`, width: "45vw" }}>
+          <div className="my-2 mx-3 ">
+            <div className="row">
+              <div className="col-md-4 contact-form-label-div">
+                <label className="contact-form-label">Email</label>
+              </div>
+              <div className="col-md-8">
+                <input
+                  className="form-control"
+                  type="text"
+                  name="email"
+                  placeholder="Email"
+                  disabled
+                  value={contact.email}
+                  onChange={(e) => handleFormDataChange(e)}
+                />
+              </div>
             </div>
-            <div className="container mt-2">
-              <input
-                className="form-control"
-                type="text"
-                name="alternateEmail"
-                placeholder="Alternate email"
-                value={contact.alternateEmail}
-                onChange={(e) => handleFormDataChange(e)}
-              />
+
+            <div className="row mt-2">
+              <div className="col-md-4 contact-form-label-div">
+                <label className="contact-form-label">Alternate Email</label>
+              </div>
+              <div className="col-md-8">
+                <input
+                  className="form-control"
+                  type="text"
+                  name="alternateEmail"
+                  placeholder="Alternate email"
+                  value={contact.alternateEmail}
+                  onChange={(e) => handleFormDataChange(e)}
+                />
+              </div>
             </div>
-            <div className="container mt-2">
-              <input
-                className="form-control"
-                type="text"
-                name="phone"
-                placeholder="Phone"
-                value={contact.phone}
-                onChange={(e) => handleFormDataChange(e)}
-              />
+
+            <div className="row mt-2">
+              <div className="col-md-4 contact-form-label-div">
+                <label className="contact-form-label">Phone</label>
+              </div>
+              <div className="col-md-8">
+                <input
+                  className="form-control"
+                  type="text"
+                  name="phone"
+                  placeholder="Phone"
+                  value={contact.phone}
+                  onChange={(e) => handleFormDataChange(e)}
+                />
+              </div>
             </div>
-            <div className="container mt-2">
-              <input
-                className="form-control"
-                type="text"
-                name="homePhone"
-                placeholder="Home Phone"
-                value={contact.homePhone}
-                onChange={(e) => handleFormDataChange(e)}
-              />
+            <div className="row mt-2">
+              <div className="col-md-4 contact-form-label-div">
+                <label className="contact-form-label">Home Phone</label>
+              </div>
+              <div className="col-md-8">
+                <input
+                  className="form-control"
+                  type="text"
+                  name="homePhone"
+                  placeholder="Home Phone"
+                  value={contact.homePhone}
+                  onChange={(e) => handleFormDataChange(e)}
+                />
+              </div>
             </div>
-            <div className="container mt-2">
-              <input
-                className="form-control"
-                type="text"
-                name="currentAddress"
-                placeholder="Current Address"
-                value={contact.currentAddress}
-                onChange={(e) => handleFormDataChange(e)}
-              />
+
+            <div className="row mt-2">
+              <div className="col-md-4 contact-form-label-div">
+                <label className="contact-form-label">Current Address</label>
+              </div>
+              <div className="col-md-8">
+                <input
+                  className="form-control"
+                  type="text"
+                  name="currentAddress"
+                  placeholder="Current Address"
+                  value={contact.currentAddress}
+                  onChange={(e) => handleFormDataChange(e)}
+                />
+              </div>
             </div>
-            <div className="container mt-2">
-              <input
-                className="form-control"
-                type="text"
-                name="permanentAddress"
-                placeholder="Permanent Address"
-                value={contact.permanentAddress}
-                onChange={(e) => handleFormDataChange(e)}
-              />
+
+            <div className="row mt-2">
+              <div className="col-md-4 contact-form-label-div">
+                <label className="contact-form-label">Permanent Address</label>
+              </div>
+              <div className="col-md-8">
+                <input
+                  className="form-control"
+                  type="text"
+                  name="permanentAddress"
+                  placeholder="Permanent Address"
+                  value={contact.permanentAddress}
+                  onChange={(e) => handleFormDataChange(e)}
+                />
+                <input
+                  className=" mx-2"
+                  type="checkbox"
+                  name=""
+                  id=""
+                  onChange={(e) => {
+                    if (e.target.checked)
+                      setContact({
+                        ...contact,
+                        permanentAddress: contact.currentAddress,
+                      });
+                  }}
+                />
+                <span>Same as Current</span>
+              </div>
             </div>
-            <div className="container mt-2">
-              <input
-                className="form-control"
-                type="text"
-                name="facebookProfile"
-                placeholder="Facebook Profile"
-                value={contact.facebookProfile}
-                onChange={(e) => handleFormDataChange(e)}
-              />
+
+            <div className="row mt-2">
+              <div className="col-md-4 contact-form-label-div">
+                <label className="contact-form-label">
+                  Facebook Profile URL
+                </label>
+              </div>
+              <div className="col-md-8">
+                <input
+                  className="form-control"
+                  type="text"
+                  name="facebookProfile"
+                  placeholder="Facebook Profile"
+                  value={contact.facebookProfile}
+                  onChange={(e) => handleFormDataChange(e)}
+                />
+              </div>
             </div>
-            <div className="container mt-2">
-              <input
-                className="form-control"
-                type="text"
-                name="linkedInProfile"
-                placeholder="LinkedIn"
-                value={contact.linkedInProfile}
-                onChange={(e) => handleFormDataChange(e)}
-              />
+            <div className="row mt-2">
+              <div className="col-md-4 contact-form-label-div">
+                <label className="contact-form-label">LinkedIn Profile</label>
+              </div>
+              <div className="col-md-8">
+                <input
+                  className="form-control"
+                  type="text"
+                  name="linkedInProfile"
+                  placeholder="LinkedIn"
+                  value={contact.linkedInProfile}
+                  onChange={(e) => handleFormDataChange(e)}
+                />
+              </div>
             </div>
-            <div className="container mt-2">
-              <input
-                className="form-control"
-                type="text"
-                name="githubProfile"
-                placeholder="Github Profile URL"
-                value={contact.githubProfile}
-                onChange={(e) => handleFormDataChange(e)}
-              />
+
+            <div className="row mt-2">
+              <div className="col-md-4 contact-form-label-div">
+                <label className="contact-form-label">Github Profile URL</label>
+              </div>
+              <div className="col-md-8">
+                <input
+                  className="form-control"
+                  type="text"
+                  name="githubProfile"
+                  placeholder="Github Profile URL"
+                  value={contact.githubProfile}
+                  onChange={(e) => handleFormDataChange(e)}
+                />
+              </div>
             </div>
-            <div className="container mt-2 mb-2">
+
+            <div className="container mt-2 mb-2  text-center">
               <button
                 className="btn btn-sm btn-outline-primary"
                 onClick={handleFormSubmit}

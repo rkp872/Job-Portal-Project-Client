@@ -25,7 +25,9 @@ const Profile = () => {
   const updatePicture = () => {
     UserService.updateUser(userState).then((res) => {
       console.log(("Updated User : ", res.data));
-      Cookies.set("user", JSON.stringify(res.data.user), { expires: 7 });
+      Cookies.set("user", JSON.stringify(res.data), { expires: 7 });
+      setPicEdit("none");
+      setPicEditBtn("");
     });
   };
   return (
@@ -115,11 +117,8 @@ const Profile = () => {
                               ></i>
                             </div>
                           </div>
-                          <h2
-                            className="text-center"
-                            style={{ fontWeight: "bold", color: "Highlight" }}
-                          >
-                            Swati Raj
+                          <h2 className="text-center profile-name">
+                            {userState.name}
                           </h2>
                         </div>
                         <div
