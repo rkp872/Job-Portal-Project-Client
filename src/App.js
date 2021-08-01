@@ -10,6 +10,7 @@ import SeekerDashboard from "./components/Seeker/Dashboard";
 import EmployerProfile from "./components/Employer/Profile";
 import SeekerProfile from "./components/Seeker/Profile";
 import NewJob from "./components/Employer/NewJob";
+import OpenJobs from "./components/Employer/OpenJobs";
 function App() {
   return (
     <BrowserRouter>
@@ -20,6 +21,7 @@ function App() {
       <Route path="/employer-dashboard" component={EmployerDashboard} />
       <Route path="/employer-profile" component={EmployerProfile} />
       <Route path="/employer-newjob" component={NewJob} />
+      <Route path="/employer-openjobs" component={OpenJobs} />
       {/* Job Seeker Routes */}
       <Route path="/seeker-dashboard" component={SeekerDashboard} />
       <Route path="/seeker-profile" component={SeekerProfile} />

@@ -9,5 +9,13 @@ class EmployerService {
       },
     });
   }
+  fetchOpenJobs() {
+    var token = Cookies.get("token");
+    return axios.get("/employer/get-openjobs", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
 }
 export default new EmployerService();

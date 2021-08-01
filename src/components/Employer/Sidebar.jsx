@@ -16,7 +16,7 @@ const Sidebar = () => {
         <Link className="side-link" to="/employer-newjob">
           <li class="list-group-item">New Job</li>
         </Link>
-        <Link className="side-link">
+        <Link className="side-link" to="/employer-openjobs">
           <li class="list-group-item">Open Jobs</li>
         </Link>
         <Link className="side-link">
