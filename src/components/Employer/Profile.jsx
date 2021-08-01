@@ -4,11 +4,11 @@ import Sidebar from "./Sidebar";
 import { Link } from "react-router-dom";
 import Summary from "./profile/Summary";
 import Contact from "./profile/Contact";
-import Professional from "./profile/Professional";
-import Education from "./profile/Education";
-import Certifications from "./profile/Certifications";
-import Achievements from "./profile/Achievements";
-import Personal from "./profile/Personal";
+import Organization from "./profile/Organization";
+import Employee from "./profile/Employee";
+import Pictures from "./profile/Pictures";
+import Locations from "./profile/Locations";
+import Leadership from "./profile/Leadership";
 
 const Profile = () => {
   const [profile, setProfile] = useState("Summary");
@@ -30,16 +30,10 @@ const Profile = () => {
                       <div className="row">
                         <div className="col-md-3">
                           <img
-                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
+                            src="https://www.logotaglines.com/wp-content/uploads/2021/02/tesla_logo_tagline-slogan-customer-care.png"
                             alt=""
                             className="profile-image"
                           />
-                          <h2
-                            className="text-center"
-                            style={{ fontWeight: "bold", color: "Highlight" }}
-                          >
-                            Swati Raj
-                          </h2>
                         </div>
                         <div className="col-md-9 ">
                           <div className="row">
@@ -76,6 +70,42 @@ const Profile = () => {
                                       <li className="nav-item ">
                                         <Link
                                           className="nav-link"
+                                          onClick={() =>
+                                            setProfile("Organization")
+                                          }
+                                        >
+                                          Organization
+                                        </Link>
+                                      </li>
+                                      <li className="nav-item ">
+                                        <Link
+                                          className="nav-link"
+                                          onClick={() =>
+                                            setProfile("Leadership")
+                                          }
+                                        >
+                                          Leadership
+                                        </Link>
+                                      </li>
+                                      <li className="nav-item ">
+                                        <Link
+                                          className="nav-link"
+                                          onClick={() => setProfile("Employee")}
+                                        >
+                                          Employee
+                                        </Link>
+                                      </li>
+                                      <li className="nav-item ">
+                                        <Link
+                                          className="nav-link"
+                                          onClick={() => setProfile("Pictures")}
+                                        >
+                                          Pictures
+                                        </Link>
+                                      </li>
+                                      <li className="nav-item ">
+                                        <Link
+                                          className="nav-link"
                                           onClick={() => setProfile("Contact")}
                                         >
                                           Contact
@@ -85,48 +115,10 @@ const Profile = () => {
                                         <Link
                                           className="nav-link"
                                           onClick={() =>
-                                            setProfile("Professional")
+                                            setProfile("Locations")
                                           }
                                         >
-                                          Professional
-                                        </Link>
-                                      </li>
-                                      <li className="nav-item ">
-                                        <Link
-                                          className="nav-link"
-                                          onClick={() =>
-                                            setProfile("Education")
-                                          }
-                                        >
-                                          Education
-                                        </Link>
-                                      </li>
-                                      <li className="nav-item ">
-                                        <Link
-                                          className="nav-link"
-                                          onClick={() =>
-                                            setProfile("Certifications")
-                                          }
-                                        >
-                                          Certifications
-                                        </Link>
-                                      </li>
-                                      <li className="nav-item ">
-                                        <Link
-                                          className="nav-link"
-                                          onClick={() =>
-                                            setProfile("Achievements")
-                                          }
-                                        >
-                                          Achievements
-                                        </Link>
-                                      </li>
-                                      <li className="nav-item ">
-                                        <Link
-                                          className="nav-link"
-                                          onClick={() => setProfile("Personal")}
-                                        >
-                                          Personal
+                                          Locations
                                         </Link>
                                       </li>
                                     </ul>
@@ -137,16 +129,12 @@ const Profile = () => {
                           </div>
                           <div className="row">
                             {profile == "Summary" ? <Summary /> : ""}
+                            {profile == "Organization" ? <Organization /> : ""}
+                            {profile == "Employee" ? <Employee /> : ""}
+                            {profile == "Pictures" ? <Pictures /> : ""}
                             {profile == "Contact" ? <Contact /> : ""}
-                            {profile == "Professional" ? <Professional /> : ""}
-                            {profile == "Education" ? <Education /> : ""}
-                            {profile == "Certifications" ? (
-                              <Certifications />
-                            ) : (
-                              ""
-                            )}
-                            {profile == "Achievements" ? <Achievements /> : ""}
-                            {profile == "Personal" ? <Personal /> : ""}
+                            {profile == "Leadership" ? <Leadership /> : ""}
+                            {profile == "Locations" ? <Locations /> : ""}
                           </div>
                         </div>
                       </div>

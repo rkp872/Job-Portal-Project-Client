@@ -29,7 +29,7 @@ const Dashboard = () => {
                   </p>
 
                   <Link
-                    to="/profile-update"
+                    to="/employer-profile"
                     className="side-link btn btn-outline-primary"
                   >
                     Update Profile

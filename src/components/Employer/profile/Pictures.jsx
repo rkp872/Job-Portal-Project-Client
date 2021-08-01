@@ -1,13 +1,13 @@
 import React from "react";
 
-const Achievements = () => {
+const Pictures = () => {
   return (
     <>
       <div>
-        <h1>Achievements</h1>
+        <h1>Pictures</h1>
       </div>
     </>
   );
 };
 
-export default Achievements;
+export default Pictures;

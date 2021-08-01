@@ -5,7 +5,7 @@ const Sidebar = () => {
   return (
     <div>
       <ul class="list-group text-center">
-        <Link className="side-link">
+        <Link className="side-link" to="/employer-dashboard">
           <li class="list-group-item active" aria-current="true">
             Dashboard
           </li>
@@ -13,7 +13,7 @@ const Sidebar = () => {
         <Link className="side-link" to="/employer-profile">
           <li class="list-group-item">Profile</li>
         </Link>
-        <Link className="side-link">
+        <Link className="side-link" to="/employer-newjob">
           <li class="list-group-item">New Job</li>
         </Link>
         <Link className="side-link">

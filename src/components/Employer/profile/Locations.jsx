@@ -1,13 +1,13 @@
 import React from "react";
 
-const Professional = () => {
+const Locations = () => {
   return (
     <>
       <div>
-        <h1>Profssional</h1>
+        <h1>Locations</h1>
       </div>
     </>
   );
 };
 
-export default Professional;
+export default Locations;

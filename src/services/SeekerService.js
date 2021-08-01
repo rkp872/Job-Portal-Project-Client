@@ -69,5 +69,86 @@ class SeekerService {
       },
     });
   }
+  fetchCertificationData() {
+    var token = Cookies.get("token");
+    return axios.get(`/seeker/get-certification`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+  addCertificationData(certification) {
+    var token = Cookies.get("token");
+    return axios.post("/seeker/add-certification", certification, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+  deleteCertificationData(id) {
+    var token = Cookies.get("token");
+    return axios.get(`/seeker/delete-certification/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+  fetchAchievements() {
+    var token = Cookies.get("token");
+    return axios.get(`/seeker/get-achievements`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+  addAchievements(achievement) {
+    var token = Cookies.get("token");
+    return axios.post("/seeker/add-achievement", achievement, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+  deleteAchievementData(id) {
+    var token = Cookies.get("token");
+    return axios.get(`/seeker/delete-achievement/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+  fetchPersonalData() {
+    var token = Cookies.get("token");
+    return axios.get(`/seeker/get-personal`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+  updatePersonalData(personal) {
+    var token = Cookies.get("token");
+    return axios.post(`/seeker/update-personal`, personal, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+  fetchSummary() {
+    var token = Cookies.get("token");
+    return axios.get(`/seeker/get-summary`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+  updateSummary(summary) {
+    var token = Cookies.get("token");
+    return axios.post(`/seeker/update-summary`, summary, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
 }
+
 export default new SeekerService();

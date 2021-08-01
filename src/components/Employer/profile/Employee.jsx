@@ -1,13 +1,13 @@
 import React from "react";
 
-const Education = () => {
+const Employee = () => {
   return (
     <>
       <div>
-        <h1>Education</h1>
+        <h1>Employee</h1>
       </div>
     </>
   );
 };
 
-export default Education;
+export default Employee;

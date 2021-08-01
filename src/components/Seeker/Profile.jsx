@@ -21,7 +21,6 @@ const Profile = () => {
 
   const user = JSON.parse(Cookies.get("user"));
   const [userState, setUserState] = useState(user);
-  console.log("userstst : ", userState);
   const updatePicture = () => {
     UserService.updateUser(userState).then((res) => {
       console.log(("Updated User : ", res.data));

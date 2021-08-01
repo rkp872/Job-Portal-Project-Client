@@ -32,7 +32,7 @@ const Navbar = () => {
           >
             <ul className="navbar-nav ">
               <li className="nav-item ">
-                <NavLink className="nav-link" to="/login">
+                <NavLink className="nav-link" to="/seeker-profile">
                   {user.name}
                 </NavLink>
               </li>

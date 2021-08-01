@@ -30,7 +30,7 @@ const Dashboard = () => {
                   </p>
 
                   <Link
-                    to="/profile-update"
+                    to="/seeker-profile"
                     className="side-link btn btn-outline-primary"
                   >
                     Update Profile

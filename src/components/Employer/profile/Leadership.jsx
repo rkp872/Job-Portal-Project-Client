@@ -1,13 +1,13 @@
 import React from "react";
 
-const Personal = () => {
+const Leadership = () => {
   return (
     <>
       <div>
-        <h1>Personal</h1>
+        <h1>Leadership</h1>
       </div>
     </>
   );
 };
 
-export default Personal;
+export default Leadership;
