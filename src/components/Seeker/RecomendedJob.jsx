@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
-import EmployerService from "../../services/EmployerService";
+import Sidebar from "./Sidebar";
+import Pagination from "./../../files/Pagination_1";
+import SeekerService from "../../services/SeekerService";
 import { Link } from "react-router-dom";
-import Pagination from "../../files/Pagination";
 
-const OpenJobs = () => {
+const RecomendedJob = () => {
   const [openJobs, setOpenJobs] = useState("");
   useEffect(() => {
-    EmployerService.fetchOpenJobs().then((res) => {
+    SeekerService.fetchOpenJobs().then((res) => {
       console.log(res.data);
       setOpenJobs(res.data);
     });
@@ -32,12 +32,13 @@ const OpenJobs = () => {
               <Sidebar />
             </div>
             <div className="col-sm-10">
-              <div className="row">
+              <div className="row ">
                 <div className="col-md-10 offset-md-1">
-                  <div className="card ParentCardScrollStyle  shadow-lg mt-5">
+                  <div className="card shadow-lg mt-5">
+                    <div className="card-header bg-primary text-white">
+                      <h2 className="text-center">Jobs Recommended For You</h2>
+                    </div>
                     <div className="card-body">
-                      <h2 className="text-center">Jobs Opened By You</h2>
-                      <hr />
                       <div>
                         <div class="row row-cols-4">
                           {openJobs ? (
@@ -51,13 +52,14 @@ const OpenJobs = () => {
                                       textDecoration: "none",
                                     }}
                                     to={{
-                                      pathname: "/employer-openjobs-details",
+                                      pathname: "/seeker-openjobs-details",
                                       state: { jobData: data },
                                     }}
                                   >
                                     <div className="card">
                                       <div className="card-body">
-                                        <h4>{data.jobTitle}</h4>
+                                        <h3>{data.postedBy.name}</h3>
+                                        <h5>{data.jobTitle}</h5>
                                         <h6>{data.location}</h6>
                                       </div>
                                     </div>
@@ -66,11 +68,11 @@ const OpenJobs = () => {
                               ))
                           ) : (
                             <h2 className="text-center">
-                              No Job Opened By You
+                              No Job Available For You
                             </h2>
                           )}
                         </div>
-                        <hr />
+
                         <Pagination
                           showPerPage={showPerPage}
                           onPaginationChange={onPaginationChange}
@@ -89,4 +91,4 @@ const OpenJobs = () => {
   );
 };
 
-export default OpenJobs;
+export default RecomendedJob;

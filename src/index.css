@@ -107,3 +107,6 @@
   max-height: 70vh;
   overflow-y: scroll;
 }
+.profile-div {
+  border: #484b4d;
+}

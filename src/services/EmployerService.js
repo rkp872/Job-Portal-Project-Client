@@ -17,5 +17,29 @@ class EmployerService {
       },
     });
   }
+  getNumberOfApplicants(jobId) {
+    var token = Cookies.get("token");
+    return axios.get(`/employer/numberof-applicants/${jobId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+  getApplicantsOfJob(jobId) {
+    var token = Cookies.get("token");
+    return axios.get(`/employer/applicants-job/${jobId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+  selectCandidate(jobId, candidateId) {
+    var token = Cookies.get("token");
+    return axios.get(`/employer/select-candidate/${jobId}/${candidateId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }
+    });
+  }
 }
 export default new EmployerService();

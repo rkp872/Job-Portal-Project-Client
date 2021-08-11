@@ -149,6 +149,38 @@ class SeekerService {
       },
     });
   }
+  fetchOpenJobs() {
+    var token = Cookies.get("token");
+    return axios.get("/seeker/get-recommendedjobs", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+  applyToJob(id) {
+    var token = Cookies.get("token");
+    return axios.get(`/seeker/apply-job/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+  getNumberOfApplicants(jobId) {
+    var token = Cookies.get("token");
+    return axios.get(`/seeker/numberof-applicants/${jobId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+  getSelectedJobs() {
+    var token = Cookies.get("token");
+    return axios.get(`/seeker/selected-jobs`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
 }
 
 export default new SeekerService();

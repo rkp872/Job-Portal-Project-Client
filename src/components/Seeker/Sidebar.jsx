@@ -28,7 +28,7 @@ const Sidebar = () => {
         </li>
 
         <li class="list-group-item">
-          <NavLink className="side-link" to="#">
+          <NavLink className="side-link" to="/seeker-recomendedjobs">
             Recommended Job
           </NavLink>
         </li>
@@ -39,6 +39,11 @@ const Sidebar = () => {
           </NavLink>
         </li>
 
+        <li class="list-group-item">
+          <NavLink className="side-link" to="/seeker-selected-jobs">
+            Selected Jobs
+          </NavLink>
+        </li>
         <li class="list-group-item">
           <NavLink className="side-link" to="#">
             Notifications
@@ -60,12 +65,6 @@ const Sidebar = () => {
         <li class="list-group-item">
           <NavLink className="side-link" to="#">
             Search
-          </NavLink>
-        </li>
-
-        <li class="list-group-item">
-          <NavLink className="side-link" to="#">
-            Saved
           </NavLink>
         </li>
 
